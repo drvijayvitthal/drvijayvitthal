@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Vijay Vitthal — Medical Director, Healthcare Informatics</title>
+<meta name="description" content="Portfolio of Dr Vijay Vitthal — 23 years bridging clinical medicine and healthcare technology, EMR/EHR systems, medical device integration and clinical transformation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#07111F;
+    --navy-900:#0E2240;
+    --navy-800:#15315A;
+    --navy-700:#1D4070;
+    --gold-500:#C9A227;
+    --gold-300:#E4C766;
+    --gold-100:#F4E7BD;
+    --cream-50:#FAF7EF;
+    --cream-100:#F1ECDD;
+    --ink-900:#18222E;
+    --slate-400:#8FA0B8;
+    --slate-600:#4D5F78;
+    --white:#FFFFFF;
+
+    --font-display:'Fraunces', serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+
+    --maxw:1140px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink-900);
+    background:var(--cream-50);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  h1,h2,h3{ font-family:var(--font-display); margin:0; font-weight:600; }
+  p{ margin:0; }
+
+  :focus-visible{
+    outline:2px solid var(--gold-500);
+    outline-offset:3px;
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--gold-500); color:var(--navy-950); padding:.6rem 1rem; z-index:200;
+  }
+  .skip-link:focus{ left:0; }
+
+  .container{ max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold-500);
+    margin:0 0 .8rem;
+    display:block;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(7,17,31,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,39,0.18);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:.85rem 1.5rem;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{ display:flex; align-items:center; gap:.65rem; }
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid var(--gold-500);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); color:var(--gold-300); font-size:1rem; font-weight:600;
+  }
+  .brand-name{ color:var(--cream-50); font-size:.95rem; line-height:1.2; }
+  .brand-name strong{ display:block; font-family:var(--font-display); font-size:1.02rem; color:var(--white); }
+  .brand-name span{ font-family:var(--font-mono); font-size:.68rem; color:var(--slate-400); letter-spacing:.08em; }
+
+  .nav-links{ display:flex; gap:1.8rem; }
+  .nav-links a{
+    font-size:.85rem; color:var(--slate-400); letter-spacing:.02em;
+    padding:.3rem 0; border-bottom:1px solid transparent; transition:color .2s, border-color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active{ color:var(--gold-300); border-color:var(--gold-500); }
+
+  .nav-toggle{
+    display:none; background:none; border:1px solid rgba(201,162,39,0.4); border-radius:6px;
+    width:40px; height:36px; cursor:pointer; position:relative;
+  }
+  .nav-toggle span{
+    position:absolute; left:9px; right:9px; height:2px; background:var(--gold-300);
+    transition:transform .25s, opacity .25s;
+  }
+  .nav-toggle span:nth-child(1){ top:11px; }
+  .nav-toggle span:nth-child(2){ top:17px; }
+  .nav-toggle span:nth-child(3){ top:23px; }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(circle at 80% -10%, rgba(201,162,39,0.10), transparent 55%), var(--navy-950);
+    color:var(--cream-50);
+    padding:8.5rem 0 4rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{ max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.4rem);
+    color:var(--white);
+    max-width:18ch;
+    line-height:1.12;
+    margin-bottom:1.3rem;
+  }
+  .hero h1 em{ color:var(--gold-300); font-style:normal; }
+  .hero-sub{
+    max-width:46ch; color:var(--slate-400); font-size:1.05rem; margin-bottom:2.1rem;
+  }
+  .hero-cta{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem; }
+  .btn{
+    font-family:var(--font-body); font-weight:600; font-size:.92rem;
+    padding:.85rem 1.6rem; border-radius:3px; display:inline-block;
+    transition:transform .18s, background .18s, color .18s, border-color .18s;
+    border:1px solid transparent;
+  }
+  .btn-gold{ background:var(--gold-500); color:var(--navy-950); }
+  .btn-gold:hover{ background:var(--gold-300); transform:translateY(-2px); }
+  .btn-outline{ border-color:rgba(244,231,189,0.35); color:var(--cream-50); }
+  .btn-outline:hover{ border-color:var(--gold-300); color:var(--gold-300); transform:translateY(-2px); }
+
+  .hero-ekg{
+    height:54px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='60' viewBox='0 0 160 60'><path d='M0 30 L40 30 L48 6 L56 54 L64 30 L160 30' fill='none' stroke='%23E4C766' stroke-width='2.5'/></svg>");
+    background-repeat:repeat-x;
+    background-size:160px 60px;
+    opacity:.85;
+    margin-bottom:2.6rem;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero-ekg{ animation:ekgscroll 5s linear infinite; }
+  }
+  @keyframes ekgscroll{ from{ background-position-x:0; } to{ background-position-x:-160px; } }
+
+  .hero-stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
+    border-top:1px solid rgba(244,231,189,0.14); padding-top:1.8rem;
+  }
+  .hero-stats div strong{
+    display:block; font-family:var(--font-display); font-size:1.7rem; color:var(--gold-300);
+  }
+  .hero-stats div span{ font-size:.78rem; color:var(--slate-400); }
+
+  /* ---------- SECTIONS GENERAL ---------- */
+  .section{ padding:5.5rem 0; }
+  .section-light{ background:var(--cream-50); color:var(--ink-900); }
+  .section-dark{ background:var(--navy-900); color:var(--cream-50); }
+  .section-dark .eyebrow{ color:var(--gold-300); }
+
+  .section-head{ max-width:640px; margin-bottom:3rem; }
+  .section-head h2{ font-size:clamp(1.6rem,3vw,2.2rem); }
+  .section-dark .section-head h2{ color:var(--white); }
+  .section-light .section-head h2{ color:var(--navy-900); }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{ display:grid; grid-template-columns:280px 1fr; gap:3rem; align-items:start; }
+  .about-badge{
+    border:1px solid var(--gold-500); border-radius:6px; padding:2.2rem 1.5rem; text-align:center; background:var(--white);
+  }
+  .badge-circle{
+    width:96px; height:96px; border-radius:50%; margin:0 auto 1rem;
+    background:var(--navy-900); color:var(--gold-300);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-size:1.9rem; border:2px solid var(--gold-500);
+  }
+  .about-badge h3{ font-size:1.05rem; color:var(--navy-900); margin-bottom:.3rem; }
+  .about-badge p{ font-size:.82rem; color:var(--slate-600); font-family:var(--font-mono); }
+  .about-text p{ margin-bottom:1.2rem; color:var(--slate-600); font-size:1rem; }
+  .quick-facts{
+    display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem; margin-top:1.6rem;
+    border-top:1px solid var(--cream-100); padding-top:1.6rem;
+  }
+  .quick-facts div{ font-family:var(--font-mono); font-size:.8rem; color:var(--navy-700); }
+  .quick-facts div span{ display:block; font-family:var(--font-body); color:var(--ink-900); font-size:.95rem; margin-top:.15rem; }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{ position:relative; padding-left:2.6rem; }
+  .timeline::before{
+    content:""; position:absolute; left:7px; top:6px; bottom:6px; width:24px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='80' viewBox='0 0 24 80'><path d='M0 40 L7 40 L10 8 L13 72 L16 40 L24 40' fill='none' stroke='%23C9A227' stroke-width='2'/></svg>");
+    background-repeat:repeat-y; background-position:center top; background-size:24px 80px;
+    opacity:.4;
+  }
+  .tl-item{ position:relative; padding-bottom:2.4rem; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-dot{
+    position:absolute; left:-2.6rem; top:.3rem; width:13px; height:13px; border-radius:50%;
+    background:var(--gold-500); border:3px solid var(--navy-900);
+  }
+  .tl-date{ font-family:var(--font-mono); font-size:.78rem; color:var(--gold-300); margin-bottom:.3rem; display:block; }
+  .tl-item h3{ font-size:1.12rem; color:var(--white); margin-bottom:.15rem; }
+  .tl-item .org{ font-size:.85rem; color:var(--slate-400); margin-bottom:.55rem; display:block; }
+  .tl-item p{ font-size:.92rem; color:#C7D2E2; max-width:62ch; }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.3rem; margin-bottom:3.2rem; }
+  .edu-card{
+    background:var(--white); border:1px solid var(--cream-100); border-left:3px solid var(--gold-500);
+    padding:1.3rem 1.5rem; border-radius:4px;
+  }
+  .edu-card h3{ font-size:1rem; color:var(--navy-900); margin-bottom:.25rem; }
+  .edu-card .org{ font-size:.85rem; color:var(--slate-600); display:block; margin-bottom:.4rem; }
+  .edu-card .yr{ font-family:var(--font-mono); font-size:.74rem; color:var(--gold-500); }
+
+  .subhead{ font-family:var(--font-display); font-size:1.2rem; color:var(--navy-900); margin-bottom:1.1rem; }
+  .cert-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem 1.5rem; }
+  .cert-item{
+    font-size:.88rem; color:var(--slate-600); padding:.55rem 0; border-bottom:1px solid var(--cream-100);
+    display:flex; gap:.6rem;
+  }
+  .cert-item::before{ content:"—"; color:var(--gold-500); flex-shrink:0; }
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+  .proj-card{
+    background:var(--navy-800); border:1px solid rgba(201,162,39,0.18); border-radius:6px; padding:1.8rem;
+  }
+  .proj-card .metric{ font-family:var(--font-mono); color:var(--gold-300); font-size:.78rem; letter-spacing:.04em; margin-bottom:.6rem; display:block; }
+  .proj-card h3{ font-size:1.1rem; color:var(--white); margin-bottom:.2rem; }
+  .proj-card .org{ font-size:.8rem; color:var(--slate-400); margin-bottom:.8rem; display:block; }
+  .proj-card p{ font-size:.9rem; color:#C7D2E2; }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; }
+  .skill-list li{
+    font-size:.95rem; color:var(--slate-600); padding:.55rem 0; border-bottom:1px solid var(--cream-100);
+    display:flex; gap:.65rem;
+  }
+  .skill-list li::before{ content:"●"; color:var(--gold-500); font-size:.6rem; margin-top:.45rem; }
+  .pill-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2rem; }
+  .pill{
+    font-family:var(--font-mono); font-size:.78rem; padding:.5rem 1rem; border-radius:20px;
+    border:1px solid var(--gold-500); color:var(--navy-900); background:var(--gold-100);
+  }
+  .skills-side h3{ font-size:.95rem; text-transform:uppercase; letter-spacing:.08em; color:var(--navy-700); margin-bottom:1rem; font-family:var(--font-body); font-weight:700; }
+
+  /* ---------- ACHIEVEMENTS ---------- */
+  .ach-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+  .ach-card{
+    border-left:3px solid var(--gold-500); background:var(--navy-800); padding:1.6rem 1.8rem; border-radius:0 6px 6px 0;
+  }
+  .ach-card h3{ font-size:1.02rem; color:var(--white); margin-bottom:.5rem; }
+  .ach-card p{ font-size:.9rem; color:#C7D2E2; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-section{ background:var(--navy-950); text-align:center; }
+  .contact-section h2{ color:var(--white); font-size:clamp(1.8rem,3.6vw,2.6rem); margin-bottom:1rem; }
+  .contact-section .lead{ color:var(--slate-400); max-width:46ch; margin:0 auto 2.6rem; }
+  .contact-grid{ display:flex; justify-content:center; gap:2.6rem; flex-wrap:wrap; margin-bottom:2.6rem; }
+  .contact-item{ text-align:left; }
+  .contact-item span.label{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.1em; color:var(--gold-500); text-transform:uppercase; display:block; margin-bottom:.3rem; }
+  .contact-item a, .contact-item p{ color:var(--cream-50); font-size:1rem; }
+  .contact-item a:hover{ color:var(--gold-300); }
+
+  footer{ background:var(--navy-950); border-top:1px solid rgba(201,162,39,0.14); padding:1.6rem 0; text-align:center; }
+  footer p{ font-size:.78rem; color:var(--slate-400); font-family:var(--font-mono); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .about-grid{ grid-template-columns:1fr; }
+    .edu-grid, .proj-grid, .ach-grid{ grid-template-columns:1fr; }
+    .skills-grid{ grid-template-columns:1fr; }
+    .cert-grid{ grid-template-columns:1fr; }
+    .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:1.6rem; }
+  }
+  @media (max-width:700px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--navy-950);
+      flex-direction:column; padding:1rem 1.5rem; gap:1rem; display:none;
+      border-bottom:1px solid rgba(201,162,39,0.18);
+    }
+    .nav-links.open{ display:flex; }
+    .nav-toggle{ display:block; }
+    .contact-grid{ gap:1.6rem; }
+    .contact-item{ text-align:center; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">VV</span>
+      <span class="brand-name"><strong>Dr Vijay Vitthal</strong><span>MEDICAL DIRECTOR</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <span class="eyebrow">Medical Director · Healthcare Informatics</span>
+      <h1>Twenty-three years at the intersection of <em>medicine</em> and <em>machine</em>.</h1>
+      <p class="hero-sub">I bridge bedside clinical care and healthcare technology — translating EMR/EHR systems, medical device integration and clinical transformation into measurably better patient outcomes.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#experience">View My Experience</a>
+        <a class="btn btn-outline" href="#contact">Get in Touch</a>
+      </div>
+      <div class="hero-ekg" role="presentation" aria-hidden="true"></div>
+      <div class="hero-stats">
+        <div><strong>23</strong><span>Years in healthcare &amp; health IT</span></div>
+        <div><strong>200+</strong><span>Medical devices mapped to EMR</span></div>
+        <div><strong>15</strong><span>Member cross-functional teams led</span></div>
+        <div><strong>2</strong><span>Platforms certified — Epic &amp; Cerner</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">About</span>
+        <h2>Bridging bedside and byte-side.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-badge reveal">
+          <div class="badge-circle">VV</div>
+          <h3>Dr Vijay Vitthal</h3>
+          <p>MBBS · M.Sc. Bioinformatics</p>
+        </div>
+        <div class="about-text reveal">
+          <p>A seasoned healthcare IT professional with 23 years of comprehensive experience, my career spans from direct clinical care to the forefront of healthcare informatics, where I bridge the gap between technology and patient care.</p>
+          <p>I possess deep expertise in EMR/EHR systems, medical device integration, and clinical transformation, underpinned by robust qualifications including a master's degree in bioinformatics and an MBBS in medicine. As I seek the role of Director, my goal is to leverage my interdisciplinary skills to innovate, lead, and advance healthcare services through technology, ensuring better patient outcomes and operational excellence.</p>
+          <div class="quick-facts">
+            <div>Location <span>Bengaluru, Karnataka, India</span></div>
+            <div>Languages <span>English, Kannada, Hindi</span></div>
+            <div>Certified On <span>Epic ASAP &amp; Cerner Millennium</span></div>
+            <div>Beyond Work <span>Triathlons &amp; health-tech workshops</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Career Timeline</span>
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">MAR 2021 — PRESENT</span>
+          <h3>Staff Technical Product Manager</h3>
+          <span class="org">GE HealthCare</span>
+          <p>Lead strategic, data-driven product work on Patient Care Solutions (PCS) platforms; map IEEE medical device parameters from GE, Drager, Fresenius, Masimo and Hamilton into EMR flowsheets. Published private IEEE terminology codes to the Rosetta workgroup and completed Rosetta mapping for 200+ GE and non-GE devices.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">JUN 2017 — DEC 2020</span>
+          <h3>Senior Manager — Healthcare &amp; Lifesciences</h3>
+          <span class="org">IBM</span>
+          <p>Acted as an industry consultant, providing strategic insight and recommendations across healthcare and life sciences engagements; recognized for exceptional leadership that helped expand IBM's healthcare IT consulting practice.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">APR 2016 — MAY 2017</span>
+          <h3>Implementation Consultant / Clinical Director / Medical Advisor</h3>
+          <span class="org">h.o.m.e</span>
+          <p>Developed and led customized post-implementation training programs for physicians and clinical staff to ensure system proficiency and adoption.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">JAN 2014 — MAR 2016</span>
+          <h3>Healthcare Transformation Specialist — Change Manager, Cerner Implementation</h3>
+          <span class="org">Hamad Medical Corporation</span>
+          <p>Facilitated the seamless transition to digital health records, designing and executing physician training programs to drive effective Cerner adoption during and after go-live.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">NOV 2012 — JAN 2014</span>
+          <h3>Cerner Solutions Designer / Product Manager</h3>
+          <span class="org">Cerner Corporation</span>
+          <p>Communicated solution-area vision to engineering and operations teams, keeping design and development aligned with clinical requirements.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">SEP 2010 — OCT 2012</span>
+          <h3>Epic Implementation Specialist — Epic ASAP Emergency Department</h3>
+          <span class="org">Accenture</span>
+          <p>Led the Epic ASAP Emergency Department rollout as an Epic EMR Analyst, mentoring team members and coordinating with clients to streamline ED workflow and improve response times.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">JAN 2010 — AUG 2010</span>
+          <h3>Senior Product Analyst</h3>
+          <span class="org">ArisGlobal</span>
+          <p>Authored the requirement specification for the agClinical product suite, owning the product's development lifecycle end to end.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">JAN 2007 — DEC 2009</span>
+          <h3>Clinical Business Analyst — Healthcare</h3>
+          <span class="org">Misys Healthcare Systems</span>
+          <p>Performed business and software development analysis for Misys EMR and Misys Connect, contributing to platform advancement.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">OCT 2005 — OCT 2006</span>
+          <h3>Senior Principal Clinical Investigator</h3>
+          <span class="org">Excel Trials India Pvt Ltd</span>
+          <p>Served as medical domain expert in clinical research, specializing in bioequivalence and bioavailability studies.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">APR 2004 — AUG 2005</span>
+          <h3>Senior Clinical Research Investigator</h3>
+          <span class="org">Lotus Labs Pvt Ltd</span>
+          <p>Delivered project-specific training to medical officers, preparing them to manage serious adverse events.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">OCT 2000 — MAR 2004</span>
+          <h3>Senior ICU Medical Officer</h3>
+          <span class="org">Laxmi Hospital</span>
+          <p>Managed emergency medical operations as ICU in-charge officer, handling OPD cases and inpatient care.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <span class="tl-date">SEP 1999 — SEP 2000</span>
+          <h3>Resident / Intern</h3>
+          <span class="org">M S Ramaiah Memorial Hospital</span>
+          <p>Built foundational clinical experience in emergency medical services, ICU operations, and OPD and inpatient care.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="education">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Academic Foundations</span>
+        <h2>Education</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <h3>Healthcare Informatics in Innovation &amp; IT</h3>
+          <span class="org">Columbia University</span>
+          <span class="yr">2019</span>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Post Graduate Diploma in Clinical Cosmetology (PGDCC)</h3>
+          <span class="org">Institute of Laser &amp; Aesthetic Medicine</span>
+          <span class="yr">2018 – 2019</span>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Cerner Implementation Specialist</h3>
+          <span class="org">Cerner Healthcare Solutions</span>
+          <span class="yr">2013 – 2014</span>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Professional Diploma in Clinical Research (PDCR)</h3>
+          <span class="org">Catalyst Clinical Services, Noida</span>
+          <span class="yr">2005</span>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Industry Diploma in Drug Design &amp; Patenting (IDDDP)</h3>
+          <span class="org">Bioinformatics Institute of India, New Delhi</span>
+          <span class="yr">2004 – 2005</span>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Master's Degree, Bioinformatics</h3>
+          <span class="org">Bioinformatics Institute of India, New Delhi</span>
+          <span class="yr">2002 – 2004</span>
+        </div>
+        <div class="edu-card reveal">
+          <h3>MBBS, Medicine</h3>
+          <span class="org">M.S. Ramaiah Medical College, Bangalore</span>
+          <span class="yr">1994 – 2000</span>
+        </div>
+      </div>
+
+      <h3 class="subhead reveal">Certifications &amp; Continuing Education</h3>
+      <div class="cert-grid reveal">
+        <div class="cert-item">Cerner Millennium — Automating Acute Care (2013)</div>
+        <div class="cert-item">Cerner Millennium — Core Foundations (2012)</div>
+        <div class="cert-item">Epic Certified — ED / ASAP (2010)</div>
+        <div class="cert-item">Essentials of IBM Rational Requirements Composer V2.0</div>
+        <div class="cert-item">Health Informatics for Innovation</div>
+        <div class="cert-item">Leading Change in Health Informatics</div>
+        <div class="cert-item">The Social and Technical Context of Health Informatics</div>
+        <div class="cert-item">Certified Professional in Health Informatics (CHTS-TR)</div>
+        <div class="cert-item">Health Informatics Specialization</div>
+        <div class="cert-item">High Performance Collaboration: Leadership, Teamwork &amp; Negotiation</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Projects</h2>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card reveal">
+          <span class="metric">200+ devices mapped</span>
+          <h3>Medical Device → EMR Interoperability</h3>
+          <span class="org">GE HealthCare</span>
+          <p>Mapped IEEE medical device parameters from GE, Drager, Fresenius, Masimo and Hamilton into EMR flowsheets, and authored private IEEE terminology codes published to the Rosetta workgroup — enabling seamless, standardized data integration at the bedside.</p>
+        </div>
+        <div class="proj-card reveal">
+          <span class="metric">ED workflow overhaul</span>
+          <h3>Epic ASAP Emergency Department Rollout</h3>
+          <span class="org">Accenture</span>
+          <p>Led the Epic ASAP implementation for the Emergency Department, streamlining clinical workflow and improving emergency response times across the care team.</p>
+        </div>
+        <div class="proj-card reveal">
+          <span class="metric">Facility-wide go-live</span>
+          <h3>Cerner Digital Health Transition</h3>
+          <span class="org">Hamad Medical Corporation</span>
+          <p>Drove change management and physician training for a facility-wide move to digital health records, securing clinician adoption during and after the Cerner implementation.</p>
+        </div>
+        <div class="proj-card reveal">
+          <span class="metric">Full lifecycle ownership</span>
+          <h3>agClinical Product Suite</h3>
+          <span class="org">ArisGlobal</span>
+          <p>Authored the requirement specification for the agClinical clinical-trials product suite and owned its development lifecycle from requirements through to release.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Capabilities</span>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skills-side reveal">
+          <h3>Domain &amp; Technical Expertise</h3>
+          <ul class="skill-list">
+            <li>EMR/EHR Systems — Epic (ASAP) &amp; Cerner Millennium</li>
+            <li>Medical Device Integration &amp; IEEE Terminology Mapping</li>
+            <li>Clinical Workflow Transformation &amp; Change Management</li>
+            <li>Health Informatics &amp; Requirements Engineering (IBM Rational)</li>
+            <li>Risk Management &amp; Regulatory Compliance for Medical Devices</li>
+            <li>Software Development Lifecycle for Healthcare Applications</li>
+            <li>Clinical Research, Bioequivalence &amp; Bioavailability Studies</li>
+            <li>Bioinformatics &amp; Drug Design</li>
+          </ul>
+        </div>
+        <div class="skills-side reveal">
+          <h3>Leadership &amp; Soft Skills</h3>
+          <div class="pill-row">
+            <span class="pill">Communication</span>
+            <span class="pill">Teamwork</span>
+            <span class="pill">Leadership</span>
+            <span class="pill">Problem-solving</span>
+          </div>
+          <h3>Languages</h3>
+          <div class="pill-row">
+            <span class="pill">English</span>
+            <span class="pill">Kannada</span>
+            <span class="pill">Hindi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="achievements">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Recognition</span>
+        <h2>Achievements</h2>
+      </div>
+      <div class="ach-grid">
+        <div class="ach-card reveal">
+          <h3>Rosetta Workgroup Publication</h3>
+          <p>Authored the MDCGE private IEEE terminology codes and published them to the Rosetta workgroup, contributing a lasting standard for medical device data exchange.</p>
+        </div>
+        <div class="ach-card reveal">
+          <h3>200+ Device Mapping Milestone</h3>
+          <p>Completed Rosetta mapping for 200 GE and non-GE medical devices, enabling their encoding and display within EMR systems.</p>
+        </div>
+        <div class="ach-card reveal">
+          <h3>Epic ASAP ED Implementation</h3>
+          <p>Successfully led the Epic ASAP Emergency Department implementation at Accenture, streamlining workflow and improving emergency response times.</p>
+        </div>
+        <div class="ach-card reveal">
+          <h3>IBM Leadership Recognition</h3>
+          <p>Recognized by IBM for exceptional leadership in healthcare and life sciences, significantly expanding the company's healthcare IT consulting division.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <span class="eyebrow reveal">Get In Touch</span>
+      <h2 class="reveal">Let's build better patient outcomes, together.</h2>
+      <p class="lead reveal">Open to Director-level opportunities at the intersection of clinical care and healthcare technology.</p>
+      <div class="contact-grid reveal">
+        <div class="contact-item">
+          <span class="label">Phone</span>
+          <a href="tel:+919742260196">+91 97422 60196</a>
+        </div>
+        <div class="contact-item">
+          <span class="label">Email</span>
+          <a href="mailto:drvijayvitthal@gmail.com">drvijayvitthal@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="label">Location</span>
+          <p>Bengaluru, Karnataka, India</p>
+        </div>
+        <div class="contact-item">
+          <span class="label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/drvijayvitthal" target="_blank" rel="noopener">linkedin.com/in/drvijayvitthal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Dr Vijay Vitthal. Built for purposeful healthcare leadership.</p>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll-spy active link
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach(a => a.classList.remove('active'));
+        const match = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  sections.forEach(s => spyObserver.observe(s));
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
